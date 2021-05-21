@@ -1,15 +1,17 @@
+#if REALSENSE
 using Babilinapps.RealSenseAprilTags.Utils.Math;
 using Intel.RealSense;
 using System.Collections;
 using System.Collections.Generic;
 using Babilinapps.RealSenseAprilTags.Utils;
+#endif
 using UnityEngine;
 
 namespace Babilinapps.RealSenseAprilTags.Examples
 {
     public class RsCameraPoseEstimation : MonoBehaviour
     {
-
+#if REALSENSE
         [Header("Frame Providers")]
         public RsStreamTextureRenderer RgbStreamTextureRenderer;
 
@@ -211,7 +213,7 @@ namespace Babilinapps.RealSenseAprilTags.Examples
 
         }
 
-
+ #endif
 
     }
 }

@@ -64,10 +64,17 @@ public class CalibrationController : MonoBehaviour
 
 	void StartPredictPose(string serialNumber)
 	{
+#if REALSENSE
 		StartCoroutine(PredictPose(serialNumber));
+#endif
 	}
+
+#if REALSENSE
     IEnumerator PredictPose(string serialNumber)
 	{
+
+		
+
 		var device = _rsDeviceBySerialNumber[serialNumber];
 		_calibrateDeviceButtonBySerial[serialNumber].UnityButton.interactable = false;
 
@@ -124,10 +131,8 @@ public class CalibrationController : MonoBehaviour
 		_calibrateDeviceButtonBySerial[serialNumber].textMesh.text = serialNumber;
 		yield return new WaitForSeconds(0.2f);
 		_calibrateDeviceButtonBySerial[serialNumber].UnityButton.interactable = true;
-
-
-	
 	}
+#endif
 
 }
 }

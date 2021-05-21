@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+#if REALSENSE
 using Intel.RealSense;
 using UnityEngine;
 
@@ -43,3 +42,4 @@ public static class CalibrationUtils
 
     
 }
+#endif

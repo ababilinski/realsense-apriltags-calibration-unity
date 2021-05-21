@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
-using Intel.RealSense;
 using UnityEngine;
-
+#if REALSENSE
+using Intel.RealSense;
 public static class RsUtilities 
 {
     public static string GetPrettyDeviceName(Device device)
@@ -31,3 +32,4 @@ public static class RsUtilities
         return name;
     }
 }
+#endif

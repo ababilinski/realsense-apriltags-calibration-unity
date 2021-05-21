@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
-using Intel.RealSense;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+#if REALSENSE
+using Intel.RealSense;
+#endif
 namespace Babilinapps.RealSenseAprilTags.Examples.Views
 {
     public class DeviceSelectorWindow : MonoBehaviour
@@ -19,7 +21,9 @@ namespace Babilinapps.RealSenseAprilTags.Examples.Views
         private readonly List<GameObject> _spawnedObject = new List<GameObject>();
         private readonly List<Toggle> _toggles = new List<Toggle>();
         private readonly List<string> _serialNumbers = new List<string>();
+#if REALSENSE
         private Context _context;
+
         private ToggleGroup _toggleGroup;
 
 
@@ -97,9 +101,12 @@ namespace Babilinapps.RealSenseAprilTags.Examples.Views
             SerialNumbersSelected.Invoke(activeSerialNumbers);
         }
 
+#endif
+
         [System.Serializable]
         public class SerialNumbersSelectedEvent : UnityEvent<List<string>>
         {
         }
+
     }
 }

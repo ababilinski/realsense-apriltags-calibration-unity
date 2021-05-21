@@ -19,6 +19,7 @@ namespace Babilinapps.RealSenseAprilTags.Examples
         // Start is called before the first frame update
         public void SpawnDevices(List<string> serialNumbers)
         {
+#if REALSENSE
             SpawnRoot.gameObject.SetActive(false);
 
             for (int i = 0; i < serialNumbers.Count; i++)
@@ -39,6 +40,7 @@ namespace Babilinapps.RealSenseAprilTags.Examples
 
             SpawnRoot.gameObject.SetActive(true);
             SpawnedDevices.Invoke(RsDeviceBySerialNumber);
+#endif
 
         }
 

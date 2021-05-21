@@ -23,8 +23,8 @@
     }
   ],
   "dependencies": {
-    "ababilinski.jp.keijiro.apriltag": "1.0.9",
-    "babilinapps.realsense.downloader": "0.1.0",
+    "ababilinski.jp.keijiro.apriltag": "1.0.10",
+    "babilinapps.realsense.downloader": "0.1.1",
     "com.unity.burst": "1.6.0-pre.2",
     "com.unity.collab-proxy": "1.3.9",
     "com.unity.ide.rider": "2.0.7",
